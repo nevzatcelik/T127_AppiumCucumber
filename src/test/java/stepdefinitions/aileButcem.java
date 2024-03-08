@@ -37,9 +37,12 @@ public class aileButcem {
     }
     @Given("hesabim sayfasindaki bilgileri degistirerek {string} {string} {string} {string} {string} degisikleri kaydedin ve dogrulayin")
     public void hesabim_sayfasindaki_bilgileri_degistirerek_degisikleri_kaydedin(String isim,String soyisim,String sehir,String yas,String meslek) {
-      aileButcemPage.textBoxVeriGirme(isim,soyisim,sehir,yas,meslek);
-      aileButcemPage.textBoxKontrol(isim,soyisim,sehir,yas,meslek);
+      aileButcemPage.textBoxVeriGirme(ConfigReader.getProperty(isim),ConfigReader.getProperty(soyisim),ConfigReader.getProperty(sehir),ConfigReader.getProperty(yas),ConfigReader.getProperty(meslek));
+      aileButcemPage.textBoxKontrol(ConfigReader.getProperty(isim),ConfigReader.getProperty(soyisim),ConfigReader.getProperty(sehir),ConfigReader.getProperty(yas),ConfigReader.getProperty(meslek));
     }
-
+    @Given("kullanici uygulamayi kapatir")
+    public void kullanici_uygulamayi_kapatir() {
+        Driver.quitAppiumDriver();
+    }
 
 }
