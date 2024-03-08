@@ -1,4 +1,4 @@
-@ab
+
 Feature: Kullanici aile butcem gorevlerini gerceklestirir
 
   Background:
@@ -15,9 +15,15 @@ Feature: Kullanici aile butcem gorevlerini gerceklestirir
     Examples:
       | isim   | soyisim  | sehir     | yas   | meslek |
       | isim1 | soyisim1  | sehir1    | yas1  | meslek1 |
-      | isim2 | soyisim2  | sehir2    |yas2   | meslek2 |
+      | isim2 | soyisim2  | sehir2    | yas2  | meslek2 |
       | isim3 | soyisim3  | sehir3    | yas3  | meslek3 |
 
+  @ab
+    Scenario:
 
 
+    * anasayfadaki arti butonuna tiklayin
+    * gelir ekle bolumune tiklayin
+    * aciklama,gelir tip, kategori, tarih ve tutari belirleyin ve kaydedin
+    * basariyla eklendigini dogrulayin
 

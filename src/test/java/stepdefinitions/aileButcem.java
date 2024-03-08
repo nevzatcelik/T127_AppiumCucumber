@@ -45,4 +45,27 @@ public class aileButcem {
         Driver.quitAppiumDriver();
     }
 
+
+    @Given("anasayfadaki arti {int} {int} {int} butonuna tiklayin")
+    public void anasayfadaki_arti_butonuna_tiklayin(int x,int y,int bekleme) throws InterruptedException {
+     ResuableMethods.koordinatTiklamaMethodu(x,y,bekleme);
+    }
+    @Given("{string} bolumune tiklayin")
+    public void gelir_ekle_bolumune_tiklayin(String gelirText) {
+    ResuableMethods.scrollWithUiScrollable(gelirText);
+    }
+    @Given("Gelir Ekle bolumunde {string},{string},{string},{string} {string},{int} {int} tarih ve tutari belirleyin ve kaydedin")
+    public void aciklama_gelir_tip_kategori_tarih_ve_tutari_belirleyin_ve_kaydedin(String ilkKutu,String gelirTip) {
+     aileButcemPage.aciklamaKutusu.sendKeys(ilkKutu);
+     ResuableMethods.scrollWithUiScrollable(gelirTip);
+
+
+    }
+    @Given("basariyla eklendigini dogrulayin")
+    public void basariyla_eklendigini_dogrulayin() {
+
+
+    }
+
+
 }
