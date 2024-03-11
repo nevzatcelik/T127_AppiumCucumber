@@ -32,8 +32,12 @@ public class AileButcemPage {
     @FindBy(xpath = "(//*[@class='android.widget.EditText'])[2]")
     public MobileElement TutarKutusu;
 
-    @FindBy(xpath = "(//*[@class='android.view.ViewGroup'])[12]")
-    public MobileElement tarihKutusu;
+    @FindBy(id = "android:id/button1")
+    public MobileElement okButonu;
+
+    @FindBy(xpath = "//*[@text='Gelir eklendi.'")
+    public MobileElement gelirEklemeCheck;
+
 
 
 
@@ -61,7 +65,16 @@ public class AileButcemPage {
        }
        ResuableMethods.scrollWithUiScrollable("Giriş Yap");
    }
+   public void tarihEkranKaydirmaMethodu(int for1,int forSart,int x1,int y1,int wait,int x2,int y2,int bekleme) throws InterruptedException {
+       for (int i = for1; i < forSart; i++) {
+           ResuableMethods.scrollScreenMethod(x1, y1, wait, x2, y2, bekleme);
 
-   public void setTarihKutusu(){}
+       }
+   }
+
+   public void setTarihKutusu() throws InterruptedException {
+       ResuableMethods.koordinatTiklamaMethodu(975,1253,1000);
+
+   }
 
 }

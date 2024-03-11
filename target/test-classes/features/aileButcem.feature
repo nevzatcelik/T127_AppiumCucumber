@@ -22,17 +22,18 @@ Feature: Kullanici aile butcem gorevlerini gerceklestirir
     Scenario:
 
     * anasayfadaki arti 533 1677 0 butonuna tiklayin
-    * "Gelir Ekle" bolumune tiklayin
+    * "Gelir Ekle" Butonuna text uzerinden Tiklanir
     * Gelir Ekle sayfasinda aciklama kismina "Ilk gelir degeri " deger girilir
     * Gelir Ekle sayfasinda "Gelir Tipi" Gelir tipi "Düzensiz" secilir
     * Gelir Ekle sayfasinda "Kategori" Kategori "Serbest Gelir" secilir
-    * Gelir Ekle sayfasinda Tarih belirlemesi yapilir
-    * Gelir Ekle sayfasinda Tutar bilgisi girilir
-    * Kaydet Butonuna Tiklanir
+    * Gelir Ekle sayfasinda Tarih belirlemesi 0 1 771 1056 500 270 1056 1000 ve gun secimi "25" yapilir
+    * Gelir Ekle sayfasinda Tutar "10000" bilgisi girilir
+    * "Kaydet" Butonuna text uzerinden Tiklanir
     * basariyla eklendigini dogrulayin
     * kullanici uygulamayi kapatir
 
     Scenario:
       * Gelir Ekle sayfasinda "Gelir Tipi" Gelir tipi "Düzenli" secilir
-      * Gelir Ekle sayfasinda "Kategori" Kategori "Maas Geliri" secilir
+      * Gelir Ekle sayfasinda "Kategori" Kategori "Maaş Geliri" secilir
+
 

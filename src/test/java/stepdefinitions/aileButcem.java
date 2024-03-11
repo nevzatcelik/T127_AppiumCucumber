@@ -52,10 +52,7 @@ public class aileButcem {
     public void anasayfadaki_arti_butonuna_tiklayin(int x,int y,int bekleme) throws InterruptedException {
      ResuableMethods.koordinatTiklamaMethodu(x,y,bekleme);
     }
-    @Given("{string} bolumune tiklayin")
-    public void gelir_ekle_bolumune_tiklayin(String gelirText) {
-    ResuableMethods.scrollWithUiScrollable(gelirText);
-    }
+
 
     @Given("Gelir Ekle sayfasinda aciklama kismina {string} deger girilir")
     public void gelir_ekle_sayfasinda_aciklama_kismina_deger_girilir(String ilkKutu) {
@@ -76,19 +73,22 @@ public class aileButcem {
 
 
     }
-    @Given("Gelir Ekle sayfasinda Tarih belirlemesi yapilir")
-    public void gelir_ekle_sayfasinda_tarih_belirlemesi_yapilir() throws InterruptedException {
+    @Given("Gelir Ekle sayfasinda Tarih belirlemesi {int} {int} {int} {int} {int} {int} {int} {int} ve gun secimi {string} yapilir")
+    public void gelir_ekle_sayfasinda_tarih_belirlemesi_yapilir(int for1,int forSart,int x1,int y1,int wait,int x2,int y2,int bekleme,String gun) throws InterruptedException {
       // aileButcemPage.tarihKutusu.click(); // 409,1246
-
+        aileButcemPage.setTarihKutusu();
+        aileButcemPage.tarihEkranKaydirmaMethodu(for1,forSart,x1,y1,wait,x2,y2,bekleme);
+        ResuableMethods.scrollWithUiScrollable(gun);
+        aileButcemPage.okButonu.click();
 
     }
-    @Given("Gelir Ekle sayfasinda Tutar bilgisi girilir")
-    public void gelir_ekle_sayfasinda_tutar_bilgisi_girilir() {
-
+    @Given("Gelir Ekle sayfasinda Tutar {string} bilgisi girilir")
+    public void gelir_ekle_sayfasinda_tutar_bilgisi_girilir(String tutar) {
+     aileButcemPage.TutarKutusu.sendKeys(tutar);
     }
-    @Given("Kaydet Butonuna Tiklanir")
-    public void kaydet_butonuna_tiklanir() {
-
+    @Given("{string} Butonuna text uzerinden Tiklanir")
+    public void kaydet_butonuna_tiklanir(String text) {
+      ResuableMethods.scrollWithUiScrollable(text);
     }
 
     @Given("Gelir Ekle bolumunde {string},{string},{string},{string} {string},{int} {int} tarih ve tutari belirleyin ve kaydedin")
@@ -100,7 +100,7 @@ public class aileButcem {
     }
     @Given("basariyla eklendigini dogrulayin")
     public void basariyla_eklendigini_dogrulayin() {
-
+    Assert.assertTrue(aileButcemPage.gelirEklemeCheck.isDisplayed());
 
     }
 
