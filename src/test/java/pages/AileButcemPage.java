@@ -3,12 +3,12 @@ package pages;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.junit.Assert;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utils.Driver;
 import utils.ResuableMethods;
 
-import javax.annotation.processing.Generated;
 import java.time.Duration;
 import java.util.logging.XMLFormatter;
 
@@ -27,57 +27,15 @@ public class AileButcemPage {
    @FindBy(xpath = "//*[@text='Başarıyla giriş yapıldı.']")
    public MobileElement girisYapildiText;
 
-   @FindBy(xpath = "(//*[@class='android.widget.EditText'])[1]")
-   public MobileElement isimKutusu;
-
-    @FindBy(xpath = "(//*[@class='android.widget.EditText'])[2]")
-    public MobileElement soyisimKutusu;
-
-    @FindBy(xpath = "(//*[@class='android.widget.EditText'])[3]")
-    public MobileElement sehirkutusu;
-
-    @FindBy(xpath = "(//*[@class='android.widget.EditText'])[4]")
-    public MobileElement yaskutusu;
-
-    @FindBy(xpath = "(//*[@class='android.widget.EditText'])[5]")
-    public MobileElement meslekKutusu;
-
     @FindBy(xpath = "(//*[@class='android.widget.EditText'])[1]")
     public MobileElement aciklamaKutusu;
     @FindBy(xpath = "(//*[@class='android.widget.EditText'])[2]")
     public MobileElement TutarKutusu;
 
+    @FindBy(xpath = "(//*[@class='android.view.ViewGroup'])[12]")
+    public MobileElement tarihKutusu;
 
 
-
-
-
-    public void bilgiSilme(){
-    isimKutusu.clear();
-    soyisimKutusu.clear();
-    sehirkutusu.clear();
-    yaskutusu.clear();
-    meslekKutusu.clear();
-}
-
- public void textBoxVeriGirme(String isim,String soyisim,String sehir,String yas,String meslek){
-    bilgiSilme();
-    isimKutusu.sendKeys(isim);
-    soyisimKutusu.sendKeys(soyisim);
-    sehirkutusu.sendKeys(sehir);
-    yaskutusu.sendKeys(yas);
-    meslekKutusu.sendKeys(meslek);
-    ResuableMethods.scrollWithUiScrollable("Kaydet");
-
- }
-
- public void textBoxKontrol(String isim,String soyisim,String sehir,String yas,String meslek){
-     Assert.assertTrue(isimKutusu.getText().contains(isim));
-     Assert.assertTrue(soyisimKutusu.getText().contains(soyisim));
-     Assert.assertTrue(sehirkutusu.getText().contains(sehir));
-     Assert.assertTrue(yaskutusu.getText().contains(yas));
-     Assert.assertTrue(meslekKutusu.getText().contains(meslek));
- }
 
 
   public void ucCizgiTiklamaMethodu() throws InterruptedException {
@@ -103,5 +61,7 @@ public class AileButcemPage {
        }
        ResuableMethods.scrollWithUiScrollable("Giriş Yap");
    }
+
+   public void setTarihKutusu(){}
 
 }
