@@ -75,13 +75,13 @@ public class aileButcem {
 
 
     }
-    @Given("Gelir Ekle sayfasinda Tarih belirlemesi {int} {int} {int} {int} {int} {int} {int} {int} ve gun secimi {string} yapilir")
-    public void gelir_ekle_sayfasinda_tarih_belirlemesi_yapilir(int for1,int forSart,int x1,int y1,int wait,int x2,int y2,int bekleme,String gun) throws InterruptedException {
+    @Given("Gelir Ekle sayfasinda Tarih belirlemesi {int} {int} {int} {int} {int} {int} {int} {int} ve gun secimi {string} {int} {int} {int} yapilir")
+    public void gelir_ekle_sayfasinda_tarih_belirlemesi_yapilir(int for1,int forSart,int x1,int y1,int wait,int x2,int y2,int bekleme,String gun,int tiklamax1,int tiklamax2,int bekleme2) throws InterruptedException {
       // aileButcemPage.tarihKutusu.click(); // 409,1246
-        aileButcemPage.setTarihKutusu();
+        aileButcemPage.setTarihKutusu(tiklamax1,tiklamax2,bekleme2);
         aileButcemPage.tarihEkranKaydirmaMethodu(for1,forSart,x1,y1,wait,x2,y2,bekleme);
         ResuableMethods.scrollWithUiScrollable(gun);
-        aileButcemPage.okButonu.click();
+        aileButcemPage.okButonu.click(); // 975,1377
 
     }
     @Given("Gelir Ekle sayfasinda Tutar {string} bilgisi girilir")

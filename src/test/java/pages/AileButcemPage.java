@@ -72,8 +72,8 @@ public class AileButcemPage {
        }
    }
 
-   public void setTarihKutusu() throws InterruptedException {
-       ResuableMethods.koordinatTiklamaMethodu(975,1253,1000);
+   public void setTarihKutusu(int x1,int y1,int beklemeSuresi) throws InterruptedException {
+       ResuableMethods.koordinatTiklamaMethodu(x1,y1,beklemeSuresi);
 
    }
 
