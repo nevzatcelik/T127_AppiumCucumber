@@ -11,6 +11,8 @@ import utils.ConfigReader;
 import utils.Driver;
 import utils.ResuableMethods;
 
+import java.io.IOException;
+
 public class aileButcem {
     AndroidDriver<AndroidElement> driver= Driver.getAndroidDriver();
     AileButcemPage aileButcemPage=new AileButcemPage();
@@ -87,8 +89,10 @@ public class aileButcem {
      aileButcemPage.TutarKutusu.sendKeys(tutar);
     }
     @Given("{string} Butonuna text uzerinden Tiklanir")
-    public void kaydet_butonuna_tiklanir(String text) {
+    public void kaydet_butonuna_tiklanir(String text) throws IOException {
       ResuableMethods.scrollWithUiScrollable(text);
+      ResuableMethods.getScreenshot("ilk");
+
     }
 
     @Given("Gelir Ekle bolumunde {string},{string},{string},{string} {string},{int} {int} tarih ve tutari belirleyin ve kaydedin")
@@ -99,8 +103,9 @@ public class aileButcem {
 
     }
     @Given("basariyla eklendigini dogrulayin")
-    public void basariyla_eklendigini_dogrulayin() {
+    public void basariyla_eklendigini_dogrulayin() throws IOException {
     Assert.assertTrue(aileButcemPage.gelirEklemeCheck.isDisplayed());
+    ResuableMethods.getScreenshot("son");
 
     }
 

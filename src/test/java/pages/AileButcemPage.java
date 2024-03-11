@@ -35,7 +35,7 @@ public class AileButcemPage {
     @FindBy(id = "android:id/button1")
     public MobileElement okButonu;
 
-    @FindBy(xpath = "//*[@text='Gelir eklendi.'")
+    @FindBy(xpath = "//*[@text='Gelir eklendi.']")
     public MobileElement gelirEklemeCheck;
 
 
